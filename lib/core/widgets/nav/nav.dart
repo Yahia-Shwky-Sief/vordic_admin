@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vordic_admin/core/widgets/nav/widgets/widgets/drawer.dart';
 
-Widget nav({required context, required Widget body}) {
-  return Scaffold(
+Widget nav({required context, required Widget body})=>
+   Scaffold(
     extendBodyBehindAppBar: true,
     body: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -17,4 +17,4 @@ Widget nav({required context, required Widget body}) {
       ],
     ),
   );
-}
+

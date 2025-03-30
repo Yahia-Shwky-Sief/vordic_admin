@@ -4,7 +4,7 @@ import 'package:page_transition/page_transition.dart';
 Widget customDrawerButton({
   required Widget page,
   required BuildContext context,
-  required String textEn,
+  required String text,
   required IconData icon,
 }) =>
     Padding(
@@ -24,7 +24,7 @@ Widget customDrawerButton({
             SizedBox(
               width: 200,
               child: Text(
-                textEn,
+                text,
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,

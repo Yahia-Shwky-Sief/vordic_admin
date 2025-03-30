@@ -9,25 +9,23 @@ Widget drawer({
 }) =>
     Drawer(
       width: 300,
-      shape: Border.all(),
+      backgroundColor: AppPalette.borderColor,
       child: ListView(
         shrinkWrap: true,
         children: [
-          SizedBox(
-            width: 200,
-            height: 200,
-            child: logo(fontSize: 36),
-          ),
-          Container(
-            color: AppPalette.greyColor,
-            height: 1,
-          ),
+          Padding(padding: const EdgeInsets.all(16), child: logo(fontSize: 48)),
           const SizedBox(height: 15),
           Column(children: [
             customDrawerButton(
               page: const Dashboard(),
-              textEn: 'Orders management',
-              icon: Icons.receipt_long,
+              text: 'Dashboard',
+              icon: Icons.dashboard,
+              context: context,
+            ),
+            customDrawerButton(
+              page: const Dashboard(),
+              text: 'Ad Banner Management',
+              icon: Icons.ad_units,
               context: context,
             ),
           ]),
