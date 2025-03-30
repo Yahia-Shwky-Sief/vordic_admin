@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:vordic_admin/core/secrets/supabase_api_keys.dart';
 import 'package:vordic_admin/core/theme/theme.dart';
-import 'package:vordic_admin/features/nav/nav.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:vordic_admin/features/dashboard/dashboard.dart';
 import 'package:vordic_admin/firebase_options.dart';
-import 'package:vordic_admin/core/constants/supabase_api_keys.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkThemeMode,
-      home: const Nav(),
+      home: const Dashboard(),
     );
   }
 }
