@@ -8,8 +8,10 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return nav(
       context: context,
+      selectedPageId: 0,
       body: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: const Text('Dashboard'),
         ),
         body: const Center(

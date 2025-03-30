@@ -12,7 +12,7 @@ class AppTheme {
       error: AppPalette.errorColor,
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Color.fromRGBO(24, 24, 32, 1),
+      backgroundColor: AppPalette.backgroundColor,
       elevation: 0,
       scrolledUnderElevation: 0,
     ),

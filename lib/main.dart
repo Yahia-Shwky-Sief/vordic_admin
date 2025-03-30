@@ -3,7 +3,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:vordic_admin/core/secrets/supabase_api_keys.dart';
 import 'package:vordic_admin/core/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:vordic_admin/features/dashboard/dashboard.dart';
+import 'package:vordic_admin/features/dashboard/ui/dashboard.dart';
 import 'package:vordic_admin/firebase_options.dart';
 
 void main() async {
