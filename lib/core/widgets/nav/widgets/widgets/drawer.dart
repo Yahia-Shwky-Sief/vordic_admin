@@ -26,7 +26,7 @@ Widget drawer({
               selected: selectedPageId == 0,
             ),
             customDrawerButton(
-              page: const AdBannerManagement(),
+              page: AdBannerManagement(),
               text: 'Ad Banner Management',
               icon: Icons.ad_units,
               context: context,

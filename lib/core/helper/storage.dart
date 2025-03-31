@@ -8,16 +8,17 @@ class Storage {
   uploadAdBannerAndGetPublicUrl({
     required String filePath,
     required String fileName,
+    required String folderName,
   }) async {
     File file = File(filePath);
 
     try {
-      await storage.from('images').upload("ads_banners/$fileName", file);
+      await storage.from('images').upload("$folderName/$fileName", file);
     } catch (e) {
       print('Error uploading file: $e');
     }
     String downloadUrl = storage.from('images').getPublicUrl(
-          'ads_banners/$fileName',
+          '$folderName/$fileName',
         );
     return downloadUrl;
   }
