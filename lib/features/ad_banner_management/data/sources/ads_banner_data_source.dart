@@ -1,6 +1,7 @@
 import 'package:vordic_admin/core/helper/storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vordic_admin/features/ad_banner_management/data/models/ad.dart';
+import 'package:uuid/uuid.dart';
 
 class AdsBannerDataSource {
   Storage storage = Storage();
@@ -8,6 +9,7 @@ class AdsBannerDataSource {
       FirebaseFirestore.instance.collection('Ads');
   static const String _folderName = 'ads_banners';
   Stream stream = _firebase.snapshots();
+  var uuid = const Uuid();
 
   Future<String> uploadAdBannerAndGetPublicUrl(
       {required String filePath, required String fileName}) async {

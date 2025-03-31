@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vordic_admin/core/widgets/nav/nav.dart';
 import 'package:vordic_admin/features/ad_banner_management/data/models/ad.dart';
 import 'package:vordic_admin/features/ad_banner_management/data/sources/ads_banner_data_source.dart';
+import 'package:vordic_admin/features/ad_banner_management/ui/widgets/ad_dialog.dart';
 
 class AdBannerManagement extends StatelessWidget {
   AdBannerManagement({super.key});
@@ -22,7 +23,7 @@ class AdBannerManagement extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (_) {
-                    return const Dialog();
+                    return const AdDialog();
                   },
                 );
               },

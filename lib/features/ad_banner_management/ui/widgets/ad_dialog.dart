@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:vordic_admin/core/widgets/text_form_field.dart';
+import 'package:vordic_admin/features/ad_banner_management/data/models/ad.dart';
 import 'package:vordic_admin/features/ad_banner_management/data/sources/ads_banner_data_source.dart';
 
-class Dialog extends StatefulWidget {
-  const Dialog({super.key});
+class AdDialog extends StatefulWidget {
+  const AdDialog({super.key});
 
   @override
-  State<Dialog> createState() => _DialogState();
+  State<AdDialog> createState() => _AdDialogState();
 }
 
-class _DialogState extends State<Dialog> {
+class _AdDialogState extends State<AdDialog> {
   final TextEditingController controller = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final AdsBannerDataSource adsBannerDataSource = AdsBannerDataSource();
@@ -90,7 +91,20 @@ class _DialogState extends State<Dialog> {
           children: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                if (formKey.currentState!.validate()) {
+                  adsBannerDataSource.addAd(
+                    ad: Ad(
+                      adId: adsBannerDataSource.uuid.v4(),
+                      adName: controller.text,
+                      adBanner: image,
+                      startDate: DateTime.now().toString(),
+                      endDate: DateTime.now()
+                          .add(const Duration(days: 30))
+                          .toString(),
+                    ),
+                  );
+                  Navigator.of(context).pop();
+                }
               },
               child: const Text('Add'),
             ),
